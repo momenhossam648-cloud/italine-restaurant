@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نابولي للبيتزا | أفضل بيتزا طازجة على الطريقة الإيطالية الأصيلة</title>
+    <meta name="description" content="مطعم نابولي للبيتزا - استمتع بأشهى أنواع البيتزا الطازجة المحضرة في الفرن الحجري على الطريقة الإيطالية الأصيلة. اطلب أونلاين أو احجز طاولتك الآن.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        },
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#121212',
+                            700: '#1a1a1a',
+                            600: '#222222',
+                            500: '#2a2a2a',
+                        },
+                        crimson: {
+                            400: '#f87171',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                            800: '#991b1b',
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        tajawal: ['Tajawal', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'slide-in-right': 'slideInRight 0.4s ease-out',
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'bounce-in': 'bounceIn 0.5s ease-out',
+                        'scale-in': 'scaleIn 0.3s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(249,115,22,0.3)' },
+                            '50%': { boxShadow: '0 0 40px rgba(249,115,22,0.6)' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(40px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideInRight: {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        bounceIn: {
+                            '0%': { transform: 'scale(0.3)', opacity: '0' },
+                            '50%': { transform: 'scale(1.05)' },
+                            '70%': { transform: 'scale(0.9)' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                        scaleIn: {
+                            '0%': { transform: 'scale(0.8)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { scroll-behavior: smooth; }
+        body {
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #121212; }
+        ::-webkit-scrollbar-thumb { background: #f97316; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ea580c; }
+
+        /* Hero parallax */
+        .hero-bg {
+            background-image: linear-gradient(to bottom, rgba(10,10,10,0.4), rgba(10,10,10,0.85)), url('images/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(249, 115, 22, 0.15);
+        }
+
+        .glass-card {
+            background: rgba(26, 26, 26, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* Glow effects */
+        .glow-orange { box-shadow: 0 0 30px rgba(249, 115, 22, 0.25); }
+        .glow-text { text-shadow: 0 0 40px rgba(249, 115, 22, 0.5); }
+
+        /* Toast notification */
+        .toast-enter { animation: slideInRight 0.4s ease-out, fadeIn 0.3s ease-out; }
+        .toast-exit { animation: slideOutRight 0.3s ease-in forwards; }
+        @keyframes slideOutRight {
+            to { transform: translateX(100%); opacity: 0; }
+        }
+
+        /* Menu card hover */
+        .menu-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .menu-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(249, 115, 22, 0.15);
+        }
+        .menu-card:hover .menu-img {
+            transform: scale(1.1);
+        }
+        .menu-img {
+            transition: transform 0.5s ease;
+        }
+
+        /* Filter buttons */
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+        .filter-btn.active {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            color: white;
+            box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+        }
+
+        /* Testimonial card */
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(249, 115, 22, 0.4);
+        }
+
+        /* Cart drawer */
+        .cart-overlay {
+            transition: opacity 0.3s ease;
+        }
+        .cart-drawer {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Section divider */
+        .section-divider {
+            background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.5), transparent);
+            height: 1px;
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #fb923c, #f97316, #ea580c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Animated border */
+        .animated-border {
+            position: relative;
+        }
+        .animated-border::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: inherit;
+            background: linear-gradient(45deg, #f97316, transparent, #f97316, transparent);
+            background-size: 400% 400%;
+            animation: borderRotate 6s linear infinite;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .animated-border:hover::before {
+            opacity: 1;
+        }
+        @keyframes borderRotate {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Mobile nav */
+        .mobile-nav {
+            transition: all 0.3s ease;
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Spinner for loading states */
+        .spinner {
+            border: 3px solid rgba(249, 115, 22, 0.2);
+            border-top-color: #f97316;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 0.6s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Form input focus glow */
+        input:focus, textarea:focus, select:focus {
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+        }
+
+        /* Star rating */
+        .star { color: #f97316; }
+        .star-empty { color: #4a4a4a; }
+
+        /* Quantity buttons */
+        .qty-btn {
+            transition: all 0.2s ease;
+        }
+        .qty-btn:hover {
+            background: #f97316;
+            color: white;
+        }
+        .qty-btn:active {
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== HEADER & NAVBAR ====== -->
+    <header id="header" class="fixed top-0 right-0 left-0 z-50 transition-all duration-500">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-500 to-crimson-600 flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm4 0h-2v-2h2v2zm-2-4c-.55 0-1-.45-1-1V9c0-.55.45-1 1-1s1 .45 1 1v2c0 .55-.45 1-1 1zm-3 0c-.55 0-1-.45-1-1V9c0-.55.45-1 1-1s1 .45 1 1v2c0 .55-.45 1-1 1z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-white leading-tight">نابولي</h1>
+                        <span class="text-xs text-brand-400 font-medium tracking-wider">PIZZA & MORE</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="#home" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-brand-400 hover:bg-white/5 transition-all duration-300 text-sm font-medium">الرئيسية</a>
+                    <a href="#menu" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-brand-400 hover:bg-white/5 transition-all duration-300 text-sm font-medium">المنيو</a>
+                    <a href="#about" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-brand-400 hover:bg-white/5 transition-all duration-300 text-sm font-medium">من نحن</a>
+                    <a href="#testimonials" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-brand-400 hover:bg-white/5 transition-all duration-300 text-sm font-medium">آراء العملاء</a>
+                    <a href="#reservation" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-brand-400 hover:bg-white/5 transition-all duration-300 text-sm font-medium">الحجز</a>
+                    <a href="#contact" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-brand-400 hover:bg-white/5 transition-all duration-300 text-sm font-medium">التواصل</a>
+                </div>
+
+                <!-- Cart + Mobile Toggle -->
+                <div class="flex items-center gap-3">
+                    <!-- Cart Button -->
+                    <button id="cart-toggle-btn" onclick="toggleCart()" class="relative p-3 rounded-xl bg-white/5 hover:bg-brand-500/20 border border-white/10 hover:border-brand-500/40 transition-all duration-300 group">
+                        <svg class="w-6 h-6 text-gray-300 group-hover:text-brand-400 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/>
+                        </svg>
+                        <span id="cart-count" class="absolute -top-1 -left-1 w-5 h-5 bg-gradient-to-br from-brand-500 to-crimson-600 text-white text-xs font-bold rounded-full flex items-center justify-center transition-all duration-300 scale-0">0</span>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobile-toggle" onclick="toggleMobileMenu()" class="lg:hidden p-3 rounded-xl bg-white/5 hover:bg-brand-500/20 border border-white/10 transition-all duration-300">
+                        <svg id="menu-icon" class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path id="menu-bars" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-nav" class="mobile-nav lg:hidden max-h-0 overflow-hidden opacity-0 pointer-events-none">
+                <div class="glass rounded-2xl p-4 mb-4 flex flex-col gap-1">
+                    <a href="#home" onclick="closeMobileMenu()" class="px-4 py-3 rounded-xl text-gray-300 hover:text-brand-400 hover:bg-white/5 transition-all text-sm font-medium">الرئيسية</a>
+                    <a href="#menu" onclick="closeMobileMenu()" class="px-4 py-3 rounded-xl text-gray-300 hover:text-brand-400 hover:bg-white/5 transition-all text-sm font-medium">المنيو</a>
+                    <a href="#about" onclick="closeMobileMenu()" class="px-4 py-3 rounded-xl text-gray-300 hover:text-brand-400 hover:bg-white/5 transition-all text-sm font-medium">من نحن</a>
+                    <a href="#testimonials" onclick="closeMobileMenu()" class="px-4 py-3 rounded-xl text-gray-300 hover:text-brand-400 hover:bg-white/5 transition-all text-sm font-medium">آراء العملاء</a>
+                    <a href="#reservation" onclick="closeMobileMenu()" class="px-4 py-3 rounded-xl text-gray-300 hover:text-brand-400 hover:bg-white/5 transition-all text-sm font-medium">الحجز</a>
+                    <a href="#contact" onclick="closeMobileMenu()" class="px-4 py-3 rounded-xl text-gray-300 hover:text-brand-400 hover:bg-white/5 transition-all text-sm font-medium">التواصل</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ====== HERO SECTION ====== -->
+    <section id="home" class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+        <!-- Floating decorative elements -->
+        <div class="absolute top-1/4 left-10 w-72 h-72 bg-brand-500/10 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-crimson-600/10 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 animate-fade-in">
+                    <span class="w-2 h-2 bg-brand-500 rounded-full animate-pulse"></span>
+                    <span class="text-brand-400 text-sm font-medium">مرحباً بكم في نابولي 🍕</span>
+                </div>
+
+                <h2 class="text-4xl sm:text-5xl md:text-7xl font-black leading-tight mb-6 animate-slide-up">
+                    <span class="text-white">مذاق</span>
+                    <span class="gradient-text"> إيطالي أصيل</span>
+                    <br>
+                    <span class="text-white">بلمسة</span>
+                    <span class="gradient-text"> عصرية</span>
+                </h2>
+
+                <p class="text-lg sm:text-xl text-gray-400 leading-relaxed mb-10 max-w-xl animate-slide-up" style="animation-delay: 0.2s;">
+                    من قلب نابولي إلى مائدتك... بيتزا طازجة محضرة بعناية في أفراننا الحجرية بأجود المكونات الطبيعية وعجينة مخمرة ٤٨ ساعة.
+                </p>
+
+                <div class="flex flex-wrap gap-4 animate-slide-up" style="animation-delay: 0.4s;">
+                    <a href="#menu" class="px-8 py-4 bg-gradient-to-l from-brand-500 to-brand-600 text-white font-bold rounded-xl hover:from-brand-600 hover:to-brand-700 transition-all duration-300 glow-orange flex items-center gap-2 group">
+                        <span>تصفح المنيو</span>
+                        <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+                    </a>
+                    <a href="#reservation" class="px-8 py-4 bg-white/5 text-white font-bold rounded-xl border border-white/20 hover:border-brand-500/50 hover:bg-brand-500/10 transition-all duration-300 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        <span>احجز طاولتك الآن</span>
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="flex flex-wrap gap-8 mt-16 animate-slide-up" style="animation-delay: 0.6s;">
+                    <div class="text-center">
+                        <div class="text-3xl font-black gradient-text">+١٥</div>
+                        <div class="text-sm text-gray-500 mt-1">سنة خبرة</div>
+                    </div>
+                    <div class="w-px bg-white/10"></div>
+                    <div class="text-center">
+                        <div class="text-3xl font-black gradient-text">+٥٠</div>
+                        <div class="text-sm text-gray-500 mt-1">نوع بيتزا</div>
+                    </div>
+                    <div class="w-px bg-white/10"></div>
+                    <div class="text-center">
+                        <div class="text-3xl font-black gradient-text">+١٠K</div>
+                        <div class="text-sm text-gray-500 mt-1">عميل سعيد</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+            <span class="text-xs text-gray-500">اكتشف المزيد</span>
+            <svg class="w-5 h-5 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </div>
+    </section>
+
+    <!-- ====== MENU SECTION ====== -->
+    <section id="menu" class="py-24 relative">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-500/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-500 text-sm font-bold tracking-widest uppercase">اختياراتنا المميزة</span>
+                <h2 class="text-4xl sm:text-5xl font-black mt-3 mb-4">
+                    <span class="text-white">قائمة</span>
+                    <span class="gradient-text"> الطعام</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">اكتشف مجموعتنا الفريدة من البيتزا والمقبلات والحلويات المحضرة بأجود المكونات الطازجة</p>
+                <div class="section-divider w-24 mx-auto mt-6"></div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 reveal">
+                <button onclick="filterMenu('all')" class="filter-btn active px-6 py-3 rounded-xl text-sm font-bold bg-white/5 border border-white/10 text-gray-400 hover:text-white" data-filter="all">
+                    الكل
+                </button>
+                <button onclick="filterMenu('classic')" class="filter-btn px-6 py-3 rounded-xl text-sm font-bold bg-white/5 border border-white/10 text-gray-400 hover:text-white" data-filter="classic">
+                    🍕 بيتزا كلاسيك
+                </button>
+                <button onclick="filterMenu('seafood')" class="filter-btn px-6 py-3 rounded-xl text-sm font-bold bg-white/5 border border-white/10 text-gray-400 hover:text-white" data-filter="seafood">
+                    🦐 بيتزا سي فود
+                </button>
+                <button onclick="filterMenu('appetizers')" class="filter-btn px-6 py-3 rounded-xl text-sm font-bold bg-white/5 border border-white/10 text-gray-400 hover:text-white" data-filter="appetizers">
+                    🍟 مقبلات
+                </button>
+                <button onclick="filterMenu('drinks')" class="filter-btn px-6 py-3 rounded-xl text-sm font-bold bg-white/5 border border-white/10 text-gray-400 hover:text-white" data-filter="drinks">
+                    🥤 مشروبات
+                </button>
+                <button onclick="filterMenu('desserts')" class="filter-btn px-6 py-3 rounded-xl text-sm font-bold bg-white/5 border border-white/10 text-gray-400 hover:text-white" data-filter="desserts">
+                    🍰 حلويات
+                </button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Cards will be injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== ABOUT SECTION ====== -->
+    <section id="about" class="py-24 relative overflow-hidden">
+        <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-brand-500/5 to-transparent"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Image Side -->
+                <div class="relative reveal">
+                    <div class="rounded-3xl overflow-hidden glow-orange">
+                        <img src="images/hero.jpg" alt="مطعم نابولي من الداخل" class="w-full h-[500px] object-cover">
+                    </div>
+                    <!-- Floating badge -->
+                    <div class="absolute -bottom-6 -left-6 glass rounded-2xl p-6 animate-float">
+                        <div class="text-4xl font-black gradient-text">+١٥</div>
+                        <div class="text-sm text-gray-400">سنة من التميز</div>
+                    </div>
+                </div>
+
+                <!-- Text Side -->
+                <div class="reveal">
+                    <span class="text-brand-500 text-sm font-bold tracking-widest uppercase">قصتنا</span>
+                    <h2 class="text-4xl sm:text-5xl font-black mt-3 mb-6">
+                        <span class="text-white">من نحن؟</span>
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed mb-6 text-lg">
+                        بدأت رحلتنا قبل أكثر من ١٥ عاماً عندما قرر الشيف <span class="text-brand-400 font-bold">ماركو روسي</span> أن ينقل أسرار البيتزا النابوليتانية الأصيلة إلى عالمنا العربي. من فرن حجري صغير إلى سلسلة مطاعم فاخرة، حافظنا على الوصفة الأصلية والشغف ذاته.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed mb-8">
+                        نستخدم فقط أجود أنواع الدقيق الإيطالي، جبن الموزاريلا الطازجة، صلصة الطماطم سان مارزانو، وعجينة مخمرة لمدة ٤٨ ساعة. كل بيتزا تُخبز في فرننا الحجري على درجة حرارة ٤٨٠° مئوية لمدة ٩٠ ثانية فقط.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="glass-card rounded-xl p-5">
+                            <div class="text-2xl mb-2">🔥</div>
+                            <h4 class="text-white font-bold mb-1">فرن حجري أصلي</h4>
+                            <p class="text-gray-500 text-sm">مستورد من نابولي</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-5">
+                            <div class="text-2xl mb-2">🌿</div>
+                            <h4 class="text-white font-bold mb-1">مكونات طبيعية</h4>
+                            <p class="text-gray-500 text-sm">١٠٠٪ طازجة يومياً</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-5">
+                            <div class="text-2xl mb-2">👨‍🍳</div>
+                            <h4 class="text-white font-bold mb-1">شيف إيطالي</h4>
+                            <p class="text-gray-500 text-sm">خبرة عالمية</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-5">
+                            <div class="text-2xl mb-2">⭐</div>
+                            <h4 class="text-white font-bold mb-1">تقييم ممتاز</h4>
+                            <p class="text-gray-500 text-sm">4.9 من 5 نجوم</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== TESTIMONIALS ====== -->
+    <section id="testimonials" class="py-24 relative">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-500 text-sm font-bold tracking-widest uppercase">ماذا يقول عملاؤنا</span>
+                <h2 class="text-4xl sm:text-5xl font-black mt-3 mb-4">
+                    <span class="text-white">آراء</span>
+                    <span class="gradient-text"> العملاء</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">نفخر بثقة عملائنا ونسعى دائماً لتقديم تجربة استثنائية</p>
+                <div class="section-divider w-24 mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card glass-card rounded-2xl p-8 reveal">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="star text-lg">★</span><span class="star text-lg">★</span><span class="star text-lg">★</span><span class="star text-lg">★</span><span class="star text-lg">★</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">"أفضل بيتزا تذوقتها في حياتي! العجينة مثالية والمكونات طازجة للغاية. الجو الرائع والخدمة الممتازة جعلتها تجربة لا تُنسى."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-500 to-crimson-600 flex items-center justify-center text-white font-bold text-lg">أ</div>
+                        <div>
+                            <h4 class="text-white font-bold">أحمد العتيبي</h4>
+                            <span class="text-gray-500 text-sm">عميل منتظم</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card glass-card rounded-2xl p-8 reveal">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="star text-lg">★</span><span class="star text-lg">★</span><span class="star text-lg">★</span><span class="star text-lg">★</span><span class="star text-lg">★</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">"مكان رائع للعائلة. الأطفال يحبون البيتزا هنا وأنا أحب المقبلات الإيطالية الأصيلة. خدمة التوصيل سريعة وممتازة أيضاً."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white font-bold text-lg">س</div>
+                        <div>
+                            <h4 class="text-white font-bold">سارة المحمد</h4>
+                            <span class="text-gray-500 text-sm">عميلة مميزة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card glass-card rounded-2xl p-8 reveal">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="star text-lg">★</span><span class="star text-lg">★</span><span class="star text-lg">★</span><span class="star text-lg">★</span><span class="star-empty text-lg">★</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">"بيتزا السي فود خرافية! الجمبري طازج والعجينة رقيقة ومقرمشة. المكان أنيق جداً ويناسب المناسبات الخاصة."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">خ</div>
+                        <div>
+                            <h4 class="text-white font-bold">خالد الشمري</h4>
+                            <span class="text-gray-500 text-sm">عميل جديد</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card glass-card rounded-2xl p-8 reveal">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="star text-lg">★</span><span class="star text-lg">★</span><span class="star text-lg">★</span><span class="star text-lg">★</span><span class="star text-lg">★</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">"الحلويات الإيطالية هنا لا تُضاهى! التيراميسو يذوب في الفم. وأسعارهم معقولة جداً مقارنة بالجودة العالية."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-white font-bold text-lg">ن</div>
+                        <div>
+                            <h4 class="text-white font-bold">نورة القحطاني</h4>
+                            <span class="text-gray-500 text-sm">عميلة دائمة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card glass-card rounded-2xl p-8 reveal">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="star text-lg">★</span><span class="star text-lg">★</span><span class="star text-lg">★</span><span class="star text-lg">★</span><span class="star text-lg">★</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">"حجزت طاولة لعيد ميلاد زوجتي والتجربة كانت رائعة! الفريق جهز كل شيء بشكل مثالي. شكراً نابولي!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white font-bold text-lg">ف</div>
+                        <div>
+                            <h4 class="text-white font-bold">فهد الدوسري</h4>
+                            <span class="text-gray-500 text-sm">عميل VIP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card glass-card rounded-2xl p-8 reveal">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="star text-lg">★</span><span class="star text-lg">★</span><span class="star text-lg">★</span><span class="star text-lg">★</span><span class="star text-lg">★</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">"كنت متردداً لكن بعد أول زيارة أصبحت مدمناً! بيتزا البيبروني بالعسل شيء خيالي. أنصح الجميع بتجربة هذا المطعم."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-lg">م</div>
+                        <div>
+                            <h4 class="text-white font-bold">محمد الحربي</h4>
+                            <span class="text-gray-500 text-sm">عميل منتظم</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== RESERVATION SECTION ====== -->
+    <section id="reservation" class="py-24 relative">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-brand-500/5 to-transparent"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-500 text-sm font-bold tracking-widest uppercase">احجز مقعدك</span>
+                <h2 class="text-4xl sm:text-5xl font-black mt-3 mb-4">
+                    <span class="text-white">حجز</span>
+                    <span class="gradient-text"> طاولة</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">احجز طاولتك الآن واستمتع بأجواء رائعة ووجبة لا تُنسى</p>
+                <div class="section-divider w-24 mx-auto mt-6"></div>
+            </div>
+
+            <form id="reservation-form" class="glass-card rounded-3xl p-8 sm:p-12 reveal" onsubmit="handleReservation(event)">
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-gray-400 text-sm font-medium mb-2">الاسم الكامل *</label>
+                        <input type="text" id="res-name" required placeholder="أدخل اسمك" class="w-full px-5 py-4 rounded-xl bg-dark-700 border border-white/10 text-white placeholder-gray-600 focus:border-brand-500 focus:outline-none transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-gray-400 text-sm font-medium mb-2">رقم الهاتف *</label>
+                        <input type="tel" id="res-phone" required placeholder="05xxxxxxxx" class="w-full px-5 py-4 rounded-xl bg-dark-700 border border-white/10 text-white placeholder-gray-600 focus:border-brand-500 focus:outline-none transition-all" dir="ltr">
+                    </div>
+                    <div>
+                        <label class="block text-gray-400 text-sm font-medium mb-2">التاريخ *</label>
+                        <input type="date" id="res-date" required class="w-full px-5 py-4 rounded-xl bg-dark-700 border border-white/10 text-white focus:border-brand-500 focus:outline-none transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-gray-400 text-sm font-medium mb-2">الوقت *</label>
+                        <input type="time" id="res-time" required class="w-full px-5 py-4 rounded-xl bg-dark-700 border border-white/10 text-white focus:border-brand-500 focus:outline-none transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-gray-400 text-sm font-medium mb-2">عدد الأفراد *</label>
+                        <select id="res-guests" required class="w-full px-5 py-4 rounded-xl bg-dark-700 border border-white/10 text-white focus:border-brand-500 focus:outline-none transition-all">
+                            <option value="" disabled selected>اختر عدد الأفراد</option>
+                            <option value="1">شخص واحد</option>
+                            <option value="2">شخصان</option>
+                            <option value="3">٣ أشخاص</option>
+                            <option value="4">٤ أشخاص</option>
+                            <option value="5">٥ أشخاص</option>
+                            <option value="6">٦ أشخاص</option>
+                            <option value="7">٧ أشخاص</option>
+                            <option value="8">٨ أشخاص أو أكثر</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-400 text-sm font-medium mb-2">المناسبة (اختياري)</label>
+                        <select id="res-occasion" class="w-full px-5 py-4 rounded-xl bg-dark-700 border border-white/10 text-white focus:border-brand-500 focus:outline-none transition-all">
+                            <option value="">بدون مناسبة</option>
+                            <option value="birthday">عيد ميلاد 🎂</option>
+                            <option value="anniversary">ذكرى سنوية 💕</option>
+                            <option value="business">اجتماع عمل 💼</option>
+                            <option value="other">أخرى</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <label class="block text-gray-400 text-sm font-medium mb-2">ملاحظات خاصة (اختياري)</label>
+                    <textarea id="res-notes" rows="3" placeholder="أي طلبات خاصة أو ملاحظات..." class="w-full px-5 py-4 rounded-xl bg-dark-700 border border-white/10 text-white placeholder-gray-600 focus:border-brand-500 focus:outline-none transition-all resize-none"></textarea>
+                </div>
+                <button type="submit" id="res-submit-btn" class="w-full mt-8 px-8 py-4 bg-gradient-to-l from-brand-500 to-brand-600 text-white font-bold text-lg rounded-xl hover:from-brand-600 hover:to-brand-700 transition-all duration-300 glow-orange flex items-center justify-center gap-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    <span>تأكيد الحجز</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ====== CONTACT & FOOTER ====== -->
+    <section id="contact" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-500 text-sm font-bold tracking-widest uppercase">تواصل معنا</span>
+                <h2 class="text-4xl sm:text-5xl font-black mt-3 mb-4">
+                    <span class="text-white">معلومات</span>
+                    <span class="gradient-text"> التواصل</span>
+                </h2>
+                <div class="section-divider w-24 mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <!-- Phone -->
+                <div class="glass-card rounded-2xl p-8 text-center hover:border-brand-500/30 transition-all reveal">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-brand-500/10 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    </div>
+                    <h4 class="text-white font-bold mb-2">اتصل بنا</h4>
+                    <p class="text-gray-400 text-sm" dir="ltr">+966 55 123 4567</p>
+                    <p class="text-gray-400 text-sm" dir="ltr">+966 11 987 6543</p>
+                </div>
+
+                <!-- Address -->
+                <div class="glass-card rounded-2xl p-8 text-center hover:border-brand-500/30 transition-all reveal">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-brand-500/10 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <h4 class="text-white font-bold mb-2">العنوان</h4>
+                    <p class="text-gray-400 text-sm">شارع التحلية، حي العليا</p>
+                    <p class="text-gray-400 text-sm">الرياض، المملكة العربية السعودية</p>
+                </div>
+
+                <!-- Working Hours -->
+                <div class="glass-card rounded-2xl p-8 text-center hover:border-brand-500/30 transition-all reveal">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-brand-500/10 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h4 class="text-white font-bold mb-2">أوقات العمل</h4>
+                    <p class="text-gray-400 text-sm">السبت - الخميس: ١٢ ظ - ١٢ م</p>
+                    <p class="text-gray-400 text-sm">الجمعة: ٢ م - ١٢ م</p>
+                </div>
+
+                <!-- Social -->
+                <div class="glass-card rounded-2xl p-8 text-center hover:border-brand-500/30 transition-all reveal">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-brand-500/10 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+                    </div>
+                    <h4 class="text-white font-bold mb-3">تابعنا</h4>
+                    <div class="flex justify-center gap-3">
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-brand-500/20 flex items-center justify-center transition-all group">
+                            <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-brand-500/20 flex items-center justify-center transition-all group">
+                            <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-400" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-brand-500/20 flex items-center justify-center transition-all group">
+                            <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-brand-500/20 flex items-center justify-center transition-all group">
+                            <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-400" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map placeholder -->
+            <div class="glass-card rounded-3xl overflow-hidden reveal">
+                <div class="relative h-80 bg-dark-700">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-brand-500/10 flex items-center justify-center">
+                                <svg class="w-10 h-10 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <h4 class="text-white font-bold text-lg mb-1">موقعنا على الخريطة</h4>
+                            <p class="text-gray-400 text-sm">شارع التحلية، حي العليا، الرياض</p>
+                        </div>
+                    </div>
+                    <!-- Grid pattern overlay -->
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle, rgba(249,115,22,0.3) 1px, transparent 1px); background-size: 30px 30px;"></div>
+                    <!-- Animated pin -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-bounce">
+                        <div class="w-8 h-8 bg-brand-500 rounded-full flex items-center justify-center shadow-lg shadow-brand-500/50">
+                            <div class="w-3 h-3 bg-white rounded-full"></div>
+                        </div>
+                        <div class="w-3 h-3 bg-brand-500 rotate-45 mx-auto -mt-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-500 to-crimson-600 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm4 0h-2v-2h2v2zm-2-4c-.55 0-1-.45-1-1V9c0-.55.45-1 1-1s1 .45 1 1v2c0 .55-.45 1-1 1zm-3 0c-.55 0-1-.45-1-1V9c0-.55.45-1 1-1s1 .45 1 1v2c0 .55-.45 1-1 1z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="text-white font-bold">نابولي للبيتزا</span>
+                        <p class="text-gray-600 text-xs">مذاق إيطالي أصيل</p>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="text-center">
+                    <p class="text-gray-500 text-sm">© ٢٠٢٦ نابولي للبيتزا. جميع الحقوق محفوظة.</p>
+                </div>
+
+                <!-- Back to top -->
+                <div class="flex justify-end">
+                    <a href="#home" class="px-6 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-brand-500/40 text-gray-400 hover:text-brand-400 transition-all text-sm font-medium flex items-center gap-2">
+                        <span>العودة للأعلى</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====== CART DRAWER ====== -->
+    <div id="cart-overlay" class="cart-overlay fixed inset-0 bg-black/60 z-50 opacity-0 pointer-events-none" onclick="toggleCart()"></div>
+    <div id="cart-drawer" class="cart-drawer fixed top-0 left-0 h-full w-full sm:w-[420px] bg-dark-800 z-50 transform -translate-x-full flex flex-col shadow-2xl">
+        <!-- Cart Header -->
+        <div class="flex items-center justify-between p-6 border-b border-white/5">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-brand-500/10 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/></svg>
+                </div>
+                <h3 class="text-white font-bold text-lg">سلة المشتريات</h3>
+            </div>
+            <button onclick="toggleCart()" class="p-2 rounded-lg hover:bg-white/5 transition-all">
+                <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+
+        <!-- Cart Items -->
+        <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+            <!-- Empty state -->
+            <div id="cart-empty" class="flex flex-col items-center justify-center h-full text-center">
+                <div class="w-24 h-24 rounded-full bg-white/5 flex items-center justify-center mb-4">
+                    <svg class="w-12 h-12 text-gray-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/></svg>
+                </div>
+                <h4 class="text-gray-400 font-bold mb-2">السلة فارغة</h4>
+                <p class="text-gray-600 text-sm">أضف بعض الأطباق اللذيذة من المنيو!</p>
+            </div>
+        </div>
+
+        <!-- Cart Footer -->
+        <div id="cart-footer" class="p-6 border-t border-white/5 hidden">
+            <div class="flex items-center justify-between mb-4">
+                <span class="text-gray-400">المجموع الفرعي</span>
+                <span id="cart-subtotal" class="text-white font-bold text-lg">0 ر.س</span>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+                <span class="text-gray-400">ضريبة القيمة المضافة (15%)</span>
+                <span id="cart-tax" class="text-gray-400">0 ر.س</span>
+            </div>
+            <div class="section-divider w-full mb-4"></div>
+            <div class="flex items-center justify-between mb-6">
+                <span class="text-white font-bold text-lg">الإجمالي</span>
+                <span id="cart-total" class="text-brand-400 font-black text-2xl">0 ر.س</span>
+            </div>
+            <button onclick="checkout()" class="w-full py-4 bg-gradient-to-l from-brand-500 to-brand-600 text-white font-bold rounded-xl hover:from-brand-600 hover:to-brand-700 transition-all glow-orange flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                <span>إتمام الطلب</span>
+            </button>
+            <button onclick="clearCart()" class="w-full mt-3 py-3 bg-white/5 text-gray-400 font-medium rounded-xl hover:bg-crimson-600/10 hover:text-crimson-400 transition-all text-sm">
+                تفريغ السلة
+            </button>
+        </div>
+    </div>
+
+    <!-- ====== TOAST CONTAINER ====== -->
+    <div id="toast-container" class="fixed top-24 left-4 z-[60] flex flex-col gap-3 max-w-sm"></div>
+
+    <!-- ====== SUCCESS MODAL ====== -->
+    <div id="success-modal" class="fixed inset-0 z-[70] flex items-center justify-center bg-black/70 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="glass rounded-3xl p-10 max-w-md mx-4 text-center transform scale-90 transition-transform duration-300" id="success-modal-content">
+            <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center animate-bounce-in">
+                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h3 id="success-title" class="text-2xl font-black text-white mb-3">تم بنجاح!</h3>
+            <p id="success-message" class="text-gray-400 leading-relaxed mb-8">تم تأكيد طلبك بنجاح.</p>
+            <button onclick="closeSuccessModal()" class="px-8 py-3 bg-gradient-to-l from-brand-500 to-brand-600 text-white font-bold rounded-xl hover:from-brand-600 hover:to-brand-700 transition-all">
+                حسناً
+            </button>
+        </div>
+    </div>
+
+
+    <!-- ====== JAVASCRIPT ====== -->
+    <script>
+        // ===== MENU DATA =====
+        const menuItems = [
+            // Classic Pizzas
+            { id: 1, name: 'بيتزا مارغريتا', desc: 'عجينة طازجة، صلصة طماطم سان مارزانو، جبن موزاريلا، ريحان طازج', price: 45, category: 'classic', img: 'images/pizza-classic.jpg' },
+            { id: 2, name: 'بيتزا بيبروني', desc: 'شرائح بيبروني حارة مع جبن موزاريلا ذائبة وصلصة طماطم غنية', price: 55, category: 'classic', img: 'images/pizza-classic.jpg' },
+            { id: 3, name: 'بيتزا أربع أجبان', desc: 'مزيج فاخر من الموزاريلا، الغورغونزولا، البارميزان، والفونتينا', price: 65, category: 'classic', img: 'images/pizza-classic.jpg' },
+            { id: 4, name: 'بيتزا خضار مشكلة', desc: 'فلفل ملون، زيتون، فطر، بصل، طماطم مجففة مع جبن موزاريلا', price: 50, category: 'classic', img: 'images/pizza-classic.jpg' },
+
+            // Seafood Pizzas
+            { id: 5, name: 'بيتزا فروتي دي ماري', desc: 'جمبري، كاليماري، بلح البحر مع صلصة بيضاء وجرجير', price: 85, category: 'seafood', img: 'images/pizza-seafood.jpg' },
+            { id: 6, name: 'بيتزا سالمون مدخن', desc: 'شرائح سالمون مدخن، كريمة حامضة، كبر، بصل أحمر', price: 90, category: 'seafood', img: 'images/pizza-seafood.jpg' },
+            { id: 7, name: 'بيتزا جمبري بالثوم', desc: 'جمبري مشوي بالزبدة والثوم مع جبن موزاريلا وبقدونس', price: 80, category: 'seafood', img: 'images/pizza-seafood.jpg' },
+            { id: 8, name: 'بيتزا تونة سبيشل', desc: 'تونة طازجة، زيتون أسود، بصل أحمر، كبر مع صلصة طماطم', price: 70, category: 'seafood', img: 'images/pizza-seafood.jpg' },
+
+            // Appetizers
+            { id: 9, name: 'بروسكيتا كلاسيك', desc: 'خبز محمص مع طماطم طازجة، ريحان، ثوم، وزيت زيتون بكر', price: 30, category: 'appetizers', img: 'images/appetizers.jpg' },
+            { id: 10, name: 'أصابع الموزاريلا', desc: 'أصابع جبن موزاريلا مقلية مقرمشة مع صلصة مارينارا', price: 35, category: 'appetizers', img: 'images/appetizers.jpg' },
+            { id: 11, name: 'خبز بالثوم', desc: 'خبز إيطالي مخبوز بالزبدة والثوم والأعشاب مع جبن بارميزان', price: 25, category: 'appetizers', img: 'images/appetizers.jpg' },
+            { id: 12, name: 'سلطة سيزر', desc: 'خس روماني، خبز محمص، بارميزان مبشور، صلصة سيزر منزلية', price: 35, category: 'appetizers', img: 'images/appetizers.jpg' },
+
+            // Drinks
+            { id: 13, name: 'عصير برتقال طازج', desc: 'برتقال طبيعي ١٠٠٪ معصور طازجاً', price: 18, category: 'drinks', img: 'images/drinks.jpg' },
+            { id: 14, name: 'ليمون بالنعناع', desc: 'ليمون طازج، نعناع أخضر، ثلج مجروش', price: 15, category: 'drinks', img: 'images/drinks.jpg' },
+            { id: 15, name: 'صودا إيطالية', desc: 'صودا بنكهات الفواكه الإيطالية المنعشة', price: 12, category: 'drinks', img: 'images/drinks.jpg' },
+            { id: 16, name: 'موهيتو فيرجن', desc: 'لايم، نعناع طازج، صودا، سكر، ثلج مجروش', price: 20, category: 'drinks', img: 'images/drinks.jpg' },
+
+            // Desserts
+            { id: 17, name: 'تيراميسو كلاسيك', desc: 'طبقات من بسكويت السافواردي مع كريمة الماسكاربوني والقهوة', price: 35, category: 'desserts', img: 'images/desserts.jpg' },
+            { id: 18, name: 'بانا كوتا', desc: 'كريمة إيطالية ناعمة بنكهة الفانيلا مع صلصة التوت الأحمر', price: 30, category: 'desserts', img: 'images/desserts.jpg' },
+            { id: 19, name: 'كانولي صقلية', desc: 'عجينة مقرمشة محشوة بكريمة الريكوتا الحلوة ورقائق الشوكولاتة', price: 28, category: 'desserts', img: 'images/desserts.jpg' },
+            { id: 20, name: 'نوتيلا بيتزا', desc: 'عجينة بيتزا حلوة مع نوتيلا، فراولة طازجة، وسكر بودرة', price: 40, category: 'desserts', img: 'images/desserts.jpg' },
+        ];
+
+        // ===== CART STATE =====
+        let cart = [];
+
+        // ===== RENDER MENU =====
+        function renderMenu(filter = 'all') {
+            const grid = document.getElementById('menu-grid');
+            const filtered = filter === 'all' ? menuItems : menuItems.filter(item => item.category === filter);
+
+            grid.innerHTML = '';
+            filtered.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = `menu-card glass-card rounded-2xl overflow-hidden animate-scale-in`;
+                card.style.animationDelay = `${index * 0.05}s`;
+                card.setAttribute('data-category', item.category);
+
+                card.innerHTML = `
+                    <div class="relative overflow-hidden h-52">
+                        <img src="${item.img}" alt="${item.name}" class="menu-img w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-transparent to-transparent"></div>
+                        <div class="absolute top-3 left-3">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold bg-brand-500/90 text-white backdrop-blur-sm">${item.price} ر.س</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-white font-bold text-lg mb-2">${item.name}</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">${item.desc}</p>
+                        <button onclick="addToCart(${item.id})" class="w-full py-3 rounded-xl bg-gradient-to-l from-brand-500/10 to-brand-600/10 border border-brand-500/20 text-brand-400 font-bold text-sm hover:from-brand-500 hover:to-brand-600 hover:text-white hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2 group">
+                            <svg class="w-5 h-5 transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                            <span>إضافة إلى السلة</span>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // ===== FILTER MENU =====
+        function filterMenu(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.filter === category) btn.classList.add('active');
+            });
+            renderMenu(category);
+        }
+
+        // ===== CART FUNCTIONS =====
+        function addToCart(id) {
+            const item = menuItems.find(i => i.id === id);
+            const existing = cart.find(c => c.id === id);
+
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...item, qty: 1 });
+            }
+            updateCartUI();
+            showToast(`تمت إضافة "${item.name}" إلى السلة ✓`, 'success');
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(c => c.id !== id);
+            updateCartUI();
+        }
+
+        function updateQty(id, delta) {
+            const item = cart.find(c => c.id === id);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) {
+                    removeFromCart(id);
+                    return;
+                }
+            }
+            updateCartUI();
+        }
+
+        function clearCart() {
+            cart = [];
+            updateCartUI();
+            showToast('تم تفريغ السلة', 'info');
+        }
+
+        function updateCartUI() {
+            const countEl = document.getElementById('cart-count');
+            const itemsEl = document.getElementById('cart-items');
+            const emptyEl = document.getElementById('cart-empty');
+            const footerEl = document.getElementById('cart-footer');
+            const subtotalEl = document.getElementById('cart-subtotal');
+            const taxEl = document.getElementById('cart-tax');
+            const totalEl = document.getElementById('cart-total');
+
+            const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+            const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+            const tax = Math.round(subtotal * 0.15 * 100) / 100;
+            const total = subtotal + tax;
+
+            // Update count badge
+            countEl.textContent = totalCount;
+            countEl.style.transform = totalCount > 0 ? 'scale(1)' : 'scale(0)';
+
+            if (cart.length === 0) {
+                emptyEl.classList.remove('hidden');
+                footerEl.classList.add('hidden');
+                // Remove all cart item elements but keep empty state
+                Array.from(itemsEl.children).forEach(child => {
+                    if (child.id !== 'cart-empty') child.remove();
+                });
+            } else {
+                emptyEl.classList.add('hidden');
+                footerEl.classList.remove('hidden');
+
+                // Clear and re-render items
+                Array.from(itemsEl.children).forEach(child => {
+                    if (child.id !== 'cart-empty') child.remove();
+                });
+
+                cart.forEach(item => {
+                    const el = document.createElement('div');
+                    el.className = 'flex gap-4 p-4 rounded-xl bg-white/5 animate-fade-in';
+                    el.innerHTML = `
+                        <img src="${item.img}" alt="${item.name}" class="w-20 h-20 rounded-xl object-cover flex-shrink-0">
+                        <div class="flex-1 min-w-0">
+                            <h4 class="text-white font-bold text-sm truncate">${item.name}</h4>
+                            <p class="text-brand-400 font-bold text-sm mt-1">${item.price} ر.س</p>
+                            <div class="flex items-center gap-2 mt-2">
+                                <button onclick="updateQty(${item.id}, -1)" class="qty-btn w-8 h-8 rounded-lg bg-white/5 border border-white/10 text-white flex items-center justify-center text-lg font-bold">−</button>
+                                <span class="text-white font-bold w-8 text-center">${item.qty}</span>
+                                <button onclick="updateQty(${item.id}, 1)" class="qty-btn w-8 h-8 rounded-lg bg-white/5 border border-white/10 text-white flex items-center justify-center text-lg font-bold">+</button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-end justify-between">
+                            <button onclick="removeFromCart(${item.id})" class="p-1.5 rounded-lg hover:bg-crimson-600/20 transition-all group">
+                                <svg class="w-4 h-4 text-gray-500 group-hover:text-crimson-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                            </button>
+                            <span class="text-gray-400 text-sm font-bold">${item.price * item.qty} ر.س</span>
+                        </div>
+                    `;
+                    itemsEl.appendChild(el);
+                });
+
+                subtotalEl.textContent = `${subtotal} ر.س`;
+                taxEl.textContent = `${tax.toFixed(2)} ر.س`;
+                totalEl.textContent = `${total.toFixed(2)} ر.س`;
+            }
+        }
+
+        // ===== TOGGLE CART =====
+        function toggleCart() {
+            const overlay = document.getElementById('cart-overlay');
+            const drawer = document.getElementById('cart-drawer');
+            const isOpen = !drawer.classList.contains('-translate-x-full');
+
+            if (isOpen) {
+                drawer.classList.add('-translate-x-full');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = '';
+            } else {
+                drawer.classList.remove('-translate-x-full');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // ===== CHECKOUT =====
+        function checkout() {
+            if (cart.length === 0) return;
+
+            const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+            const tax = Math.round(total * 0.15 * 100) / 100;
+
+            toggleCart();
+            showSuccessModal(
+                'تم تأكيد الطلب بنجاح! 🎉',
+                `شكراً لطلبك من نابولي للبيتزا!\n\nإجمالي الطلب: ${(total + tax).toFixed(2)} ر.س\nعدد الأصناف: ${cart.length}\n\nسيتم توصيل طلبك خلال ٣٠-٤٥ دقيقة.\nرقم الطلب: #NP${Date.now().toString().slice(-6)}`
+            );
+            cart = [];
+            updateCartUI();
+        }
+
+        // ===== RESERVATION =====
+        function handleReservation(e) {
+            e.preventDefault();
+            const name = document.getElementById('res-name').value;
+            const phone = document.getElementById('res-phone').value;
+            const date = document.getElementById('res-date').value;
+            const time = document.getElementById('res-time').value;
+            const guests = document.getElementById('res-guests').value;
+
+            showSuccessModal(
+                'تم تأكيد الحجز بنجاح! 🎉',
+                `مرحباً ${name}!\n\nتم حجز طاولتك بنجاح:\n📅 التاريخ: ${date}\n⏰ الوقت: ${time}\n👥 عدد الأفراد: ${guests}\n📞 الهاتف: ${phone}\n\nرقم الحجز: #NR${Date.now().toString().slice(-6)}\n\nسنتواصل معك لتأكيد الحجز. شكراً لاختياركم نابولي!`
+            );
+            document.getElementById('reservation-form').reset();
+        }
+
+        // ===== TOAST NOTIFICATIONS =====
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+
+            const bgColor = type === 'success' ? 'from-emerald-600/90 to-emerald-700/90' :
+                            type === 'error' ? 'from-crimson-600/90 to-crimson-700/90' :
+                            'from-brand-500/90 to-brand-600/90';
+
+            const icon = type === 'success' ? '<path d="M5 13l4 4L19 7"/>' :
+                         type === 'error' ? '<path d="M6 18L18 6M6 6l12 12"/>' :
+                         '<path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>';
+
+            toast.className = `toast-enter flex items-center gap-3 px-5 py-4 rounded-xl bg-gradient-to-l ${bgColor} backdrop-blur-lg shadow-2xl border border-white/10`;
+            toast.innerHTML = `
+                <svg class="w-5 h-5 text-white flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">${icon}</svg>
+                <span class="text-white text-sm font-medium">${message}</span>
+            `;
+
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('toast-enter');
+                toast.classList.add('toast-exit');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // ===== SUCCESS MODAL =====
+        function showSuccessModal(title, message) {
+            const modal = document.getElementById('success-modal');
+            const content = document.getElementById('success-modal-content');
+            document.getElementById('success-title').textContent = title;
+            document.getElementById('success-message').textContent = message;
+            document.getElementById('success-message').style.whiteSpace = 'pre-line';
+
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            content.classList.remove('scale-90');
+            content.classList.add('scale-100');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSuccessModal() {
+            const modal = document.getElementById('success-modal');
+            const content = document.getElementById('success-modal-content');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-90');
+            document.body.style.overflow = '';
+        }
+
+        // ===== MOBILE MENU =====
+        let mobileMenuOpen = false;
+        function toggleMobileMenu() {
+            mobileMenuOpen = !mobileMenuOpen;
+            const nav = document.getElementById('mobile-nav');
+            if (mobileMenuOpen) {
+                nav.style.maxHeight = '400px';
+                nav.style.opacity = '1';
+                nav.style.pointerEvents = 'auto';
+            } else {
+                closeMobileMenu();
+            }
+        }
+        function closeMobileMenu() {
+            mobileMenuOpen = false;
+            const nav = document.getElementById('mobile-nav');
+            nav.style.maxHeight = '0';
+            nav.style.opacity = '0';
+            nav.style.pointerEvents = 'none';
+        }
+
+        // ===== HEADER SCROLL EFFECT =====
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            const scrollY = window.scrollY;
+
+            if (scrollY > 80) {
+                header.classList.add('glass');
+                header.style.borderBottom = '1px solid rgba(249,115,22,0.1)';
+            } else {
+                header.classList.remove('glass');
+                header.style.borderBottom = 'none';
+            }
+            lastScroll = scrollY;
+        });
+
+        // ===== SCROLL REVEAL ANIMATION =====
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ===== ACTIVE NAV LINK HIGHLIGHT =====
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY + 100;
+            sections.forEach(section => {
+                const top = section.offsetTop;
+                const height = section.offsetHeight;
+                const id = section.getAttribute('id');
+                const link = document.querySelector(`.nav-link[href="#${id}"]`);
+                if (link) {
+                    if (scrollPos >= top && scrollPos < top + height) {
+                        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('text-brand-400'));
+                        link.classList.add('text-brand-400');
+                    }
+                }
+            });
+        });
+
+        // ===== SET MINIMUM DATE FOR RESERVATION =====
+        const dateInput = document.getElementById('res-date');
+        if (dateInput) {
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.setAttribute('min', today);
+        }
+
+        // ===== INIT =====
+        renderMenu();
+    </script>
+</body>
+</html>
